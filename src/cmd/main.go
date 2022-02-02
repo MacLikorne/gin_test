@@ -16,6 +16,7 @@ func main() {
 	router := gin.Default()
 
 	router.POST("/numbers/:number", func(c *gin.Context) { pkg.AddNumber(c, db) })
+	router.GET("/numbers", func(c *gin.Context) { pkg.ListNumbers(c, db) })
 
 	router.Run()
 }
